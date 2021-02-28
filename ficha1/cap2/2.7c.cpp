@@ -4,8 +4,9 @@ using namespace std;
 
 int main() {
     int i, j, y;
-    y = 1;
+    y = 2;
     i = 3;
+    cout << 2 << endl;
     do {
         for (j = 2; j < i; j++) {
             if ((i % j) == 0) {
@@ -18,7 +19,7 @@ int main() {
                 break;
             }
         }
-    } while (y < 100);
+    } while (y <= 100);
 
     return 0;
 }
