@@ -6,10 +6,6 @@ using namespace std;
 int main() {
     float sum = 0, mean, smallest, largest, sd = 0, a;
     int size = 0;
-/*     int n;
-
-    cout << "Input the number of elements in the sequence: ";
-    cin >> n; */
     int arr[100];
 
     for (int i = 0; i < 30; i++) {
