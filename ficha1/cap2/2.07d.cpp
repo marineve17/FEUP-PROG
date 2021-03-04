@@ -1,5 +1,6 @@
 #include<iostream>
 #include<math.h>
+#include<limits.h>
 using namespace std;
 
 bool isPrime(unsigned long int n);
@@ -22,7 +23,7 @@ int main() {
 bool isPrime(unsigned long int n) {
     bool prime = true;
     int i;
-    for (i = 2; i < n; i++) {
+    for (i = 2; i <= sqrt(n); i++) {
         if ((n % i) == 0) {
             prime = false;
             break;
