@@ -28,9 +28,9 @@ int main() {
         }
     }
 
-    cout << "The square root is aproximately " << rq << endl;
+    cout << "The square root is aproximately " << rqn << endl;
     cout << "The precise root is " << sqrt(n) << endl;
-    cout << "The difference between the roots is " << abs(rq - sqrt(n));
+    cout << "The difference between the roots is " << abs(rqn - sqrt(n));
 }
 
 int getPrecision(float delta) {

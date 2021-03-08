@@ -7,7 +7,7 @@ int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {
         if (i%2 == 0) {
-            four = four - (4/three);
+             four = four - (4/three);
         } else {
             four = four + (4/three);
         }

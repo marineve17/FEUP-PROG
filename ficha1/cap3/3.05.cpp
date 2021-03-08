@@ -12,20 +12,12 @@ int getGCD(int a, int b) {
             return a;
         }
     } else {
-        if (a > b) {
-            while (a > b) {
-                a -=b;
-            } 
-            while (b > a) {
-                b -= a;
-            }
-        } else {
-            while (b > a) {
-                b -= a;
-            }
-            while (a > b) {
+        while (!(a==b)) {
+            if (a>b) {
                 a -= b;
-            }
+            } else {
+                b -= a;
+            } 
         }
     }
     return a;
