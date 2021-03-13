@@ -3,8 +3,6 @@
 
 using namespace std;
 
-/* adaptar mudnças do string sum para as outras fiuncoes
-switch case igual a +*/
 int getGCD(int a, int b);
 void reduceFraction(int &numerator, int &denominator);
 string sum(int &numa, int &dema, int &numb, int&demb);

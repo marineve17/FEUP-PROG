@@ -10,7 +10,6 @@ int main() {
     int i;
     bool res;
     for (n; n > 0; n--) {
-        cout << n << endl;
         res = isPrime(n);
         if (res == true) {
             cout << n;
