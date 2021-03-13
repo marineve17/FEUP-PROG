@@ -27,7 +27,7 @@ int main() {
     cin >> option;
 
     if ((option == 'T') || (option == 't')) {
-        cout << "Please input the 3 vertices: ";
+        cout << "Please input the 3 vertices (format x1 y1): ";
         cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
         cout << "The area of the triangle is " << area(x1, y1, x2, y2, x3, y3) << endl;
 
@@ -37,7 +37,7 @@ int main() {
         cout << "The area of the circle is " << area(radius) << endl;
 
     } else if ((option == 'R') || (option == 'r')) {
-        cout << "Please input 2 of the vertices: ";
+        cout << "Please input 2 of the vertices (format x1 y1): ";
         cin >> x1 >> y1 >> x2 >> y2;
         cout << "The area of the rectangle is " << area(x1, x2, y1, y2);
 
