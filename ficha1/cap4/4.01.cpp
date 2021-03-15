@@ -23,6 +23,7 @@ size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1
     int j = 0;
     int idx = findValueInArray(a, nElem, value, pos1, pos2);
     if (idx != -1) {
+        index[j] = idx;
         j++;
         while (idx != -1) {
             idx = findValueInArray(a, nElem, value, idx + 1, pos2);
@@ -50,8 +51,10 @@ int main() {
 
     cout << "Give me a value to find, a position to start and a final position: ";
     cin >> value >> pos1 >> pos2;
+    cin.clear();
+    cin.ignore(10000, '\n');
     if (pos2 > count) {  //restricting variable pos2
-        pos2 == count;
+        pos2 = count;
     }
 
     if (findValueInArray(a, count, value, pos1, pos2) == -1) {
