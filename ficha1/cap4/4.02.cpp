@@ -9,7 +9,7 @@ void readVector(vector<int> &v) {
     while (true) {
         cin >> input;
 
-        if (input == -1) {  //breaking with -1 (must be changed to eof)
+        if (cin.eof()) {  //breaking with eof
             cout << "Done." << endl;
             break;
         }
@@ -50,17 +50,14 @@ int main() {
     vector<int> nums;
     vector<size_t> index;
 
+    cout << "Give me a value to find, a position to start and a final position: ";
+    cin >> value >> pos1 >> pos2;
+
     cout << "Input the elements of the sequence (eof to stop): ";
 
     readVector(nums);
     cin.clear();
     cin.ignore(10000, '\n');
-
-    cout << "Give me a value to find, a position to start and a final position: ";
-    cin >> value >> pos1 >> pos2;
-    if (pos2 > nums.size()) {  //restricting variable pos2
-        pos2 = nums.size();
-    }
 
     if (findValueInVector(nums, value, pos1, pos2) == -1) {
         cout << "The number given was not found between the positions given." << endl;
@@ -69,12 +66,7 @@ int main() {
     }
 
     size_t j = findMultValuesInVector(nums, value, pos1, pos2, index);
-    cout << "The number was found " << j << ((j == 1) ? " time is the position " : " times in the positions ");  //states every occurence
-
-    for (auto i: index) {
-        cout << index[i] << " ";
-    }
-    cout << endl;
+    cout << "The value was found " << j << ((j == 1) ? " time." : " times.") << endl;  //states number of occurences
 
     return 0;
 }
