@@ -62,7 +62,7 @@ char validate() {
 
 int main() {
     char option;
-    cout << "Please state if you want the sequence to be sorted ascendigly (a) or descendingly (d): ";
+    cout << "Please state if you want the sequence to be sorted ascendingly (a) or descendingly (d): ";
     option = validate();
 
     cout << "Input sequence (eof to break): ";
