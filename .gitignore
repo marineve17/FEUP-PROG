@@ -1,5 +1,7 @@
+
 **/.vscode/
-*.exe
 cenas.cpp
 calc.cpp
 tempCodeRunnerFile.cpp
+
+
