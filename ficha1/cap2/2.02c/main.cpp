@@ -22,9 +22,9 @@ int main() {
     if ((a <= 0) or (b <= 0) or (c <= 0)) {
         cout << "None of the lengths can be less than or equal to zero." << endl;
     } else if (max > (l1 + l2)) {
-        cout << "The triangle is impossible to build."
+        cout << "The triangle is impossible to build.";
     } else {
-        cout << "The triangle is possible to build."
+        cout << "The triangle is possible to build.";
     }
     
 }

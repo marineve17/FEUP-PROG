@@ -7,13 +7,10 @@ using namespace std;
 int main() {
     float sum = 0, mean, smallest, largest, sd = 0, a;
     int size = 0;
-/*     int n;
 
-    cout << "Input the number of elements in the sequence: ";
-    cin >> n; */
     int arr[10];
     for (int i = 0; i < 30; i++) {
-        cout << "Input number (^Z to break): ";
+        cout << "Input number (eof to break): ";  //to be modified to vector 
         cin >> arr[i];
         if (cin.eof()) {
             break;
