@@ -43,8 +43,8 @@ int main() {
     cout << "Input the amount of numbers you want to cast an array for ";
     cin >> count;
 
-    int a[count];
-    size_t index[count];
+    int a[1000];
+    size_t index[1000];
 
     cout << "Input the elements of the sequence: ";
     readArray(a, count);
