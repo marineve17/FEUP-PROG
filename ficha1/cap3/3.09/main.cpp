@@ -80,19 +80,28 @@ string monthsStr(int month) {
     return 0;
 }
 
-int main() {
-    int year;
-    cout << "Input the year you want to get the calendar for: ";
-    cin >> year;
-    cout << "\n";
+void displayCalendar(int year) {
+    for (int month = 1; month <= 12; month++) {  //displays month/year - <month name>
+        if ((month == 1) || (month == 2) || (month == 12)) {  //added emojis for each season (sorry !!!)
+            cout << month << "/" << year << " - " << monthsStr(month) << " ❄️" << endl;
 
-    for (int i = 1; i <= 12; i++) {
-        cout << i << "/" << year << " - " << monthsStr(i) << endl;
-        cout << "Sun" << setw(5) << "Mon" << setw(5) << "Tue" << setw(5) << "Wed" << setw(5) << "Thu" << setw(5) << "Fri" << setw(5) << "Sat" << endl; //header
+        } else if ((month == 3) || (month == 4) || (month == 5)) {
+            cout << month << "/" << year << " - " << monthsStr(month) << " 🌸" << endl;
 
-        for (int d = 1; d <= daysIn(i, year); d++) {
-            int x = getDayOfWeek(i, year, d);
-            if (d == daysIn(i, year)) { //adjusting position of last day
+        } else if ((month == 6) || (month == 7) || (month == 8)) {
+            cout << month << "/" << year << " - " << monthsStr(month) << " ☀️" << endl;
+
+        } else {
+            cout << month << "/" << year << " - " << monthsStr(month) << " 🍂" << endl;
+        }
+          
+        cout << "Sun" << setw(5) << "Mon" << setw(5) 
+        << "Tue" << setw(5) << "Wed" << setw(5) << "Thu" 
+        << setw(5) << "Fri" << setw(5) << "Sat" << endl;  //header
+
+        for (int d = 1; d <= daysIn(month, year); d++) {
+            int x = getDayOfWeek(month, year, d);
+            if (d == daysIn(month, year)) {  //adjusting position of last day
                 if (x == 1) {
                     cout << d << "\n" << endl;
                 } else {
@@ -173,6 +182,16 @@ int main() {
                     }
             }
         }
+}
+
+int main() {
+    int year;
+    cout << "Input the year you want to get the calendar for: "; //letting user choose the year
+    cin >> year;
+    cout << "\n";
+
+    displayCalendar(year);
+
     return 0; 
 }
            
