@@ -1,3 +1,5 @@
+//work in progress
+
 #include <iostream>
 #include<vector>
 using namespace std;
@@ -44,7 +46,7 @@ void readVector(vector<int> &v) {
     }
 }
 
-char validate() {
+/* char validate() {
     char option;
     cin >> option;
     while (cin.good() && (option != 'a') && (option != 'd')) {
@@ -52,12 +54,12 @@ char validate() {
         cin >> option;
     }
     return option;
-}
+} */
 
 int main() {
-    char option;
+/*     char option;
     cout << "Please state if you want the sequence to be sorted ascendigly (a) or descendingly (d): ";
-    option = validate();
+    option = validate(); */
 
     cout << "Input sequence (eof to break): ";
     vector<int> v;
