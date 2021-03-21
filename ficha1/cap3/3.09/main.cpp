@@ -81,39 +81,28 @@ string monthsStr(int month) {
 }
 
 void displayCalendar(int year) {
-    for (int month = 1; month <= 12; month++) {  //displays month/year - <month name>
-        if ((month == 1) || (month == 2) || (month == 12)) {  //added emojis for each season (sorry !!!)
-            cout << month << "/" << year << " - " << monthsStr(month) << " ❄️" << endl;
-
-        } else if ((month == 3) || (month == 4) || (month == 5)) {
-            cout << month << "/" << year << " - " << monthsStr(month) << " 🌸" << endl;
-
-        } else if ((month == 6) || (month == 7) || (month == 8)) {
-            cout << month << "/" << year << " - " << monthsStr(month) << " ☀️" << endl;
-
-        } else {
-            cout << month << "/" << year << " - " << monthsStr(month) << " 🍂" << endl;
-        }
+    for (int month = 1; month <= 12; month++) {  
+        cout << "\x1B[38;2;186;112;250m" << month << "/" << year << " - " << monthsStr(month) << "\x1B[0m" << endl; //displays month/year - <month name>
           
-        cout << "Sun" << setw(5) << "Mon" << setw(5) 
+        cout << "\x1B[38;2;223;176;245m" << "Sun" << "\x1B[0m" << setw(5) << "Mon" << setw(5) 
         << "Tue" << setw(5) << "Wed" << setw(5) << "Thu" 
-        << setw(5) << "Fri" << setw(5) << "Sat" << endl;  //header
+        << setw(5) << "Fri"  << "\x1B[38;2;223;176;245m" << setw(5) << "Sat" << "\x1B[0m" << endl;  //header
 
         for (int d = 1; d <= daysIn(month, year); d++) {
             int x = getDayOfWeek(month, year, d);
             if (d == daysIn(month, year)) {  //adjusting position of last day
                 if (x == 1) {
-                    cout << d << "\n" << endl;
+                    cout << "\x1B[38;2;242;214;255m" << d << "\n" << endl;
                 } else {
                     cout << setw(5) << d << "\n" << endl;
                 }
             } else if (d == 1) {
-                switch (x) {
+                switch (x) {  //aligning first row
                     case (1):
-                        cout << d;
+                        cout << " " << "\x1B[38;2;242;214;255m" << d  << "\x1B[0m";
                         break; 
                     case (2):
-                        cout << setw(7) << d;
+                        cout << setw(7)  << d;
                         break;
                     case (3): 
                         cout << setw(12) << d;
@@ -128,13 +117,13 @@ void displayCalendar(int year) {
                         cout << setw(27) << d;
                         break;
                     case (0): 
-                        cout << setw(32) << d << endl;
+                        cout << "\x1B[38;2;242;214;255m" << setw(32) << d << "\x1B[0m" << endl;
                         break;
                 }
             } else if (d < 10) { //aligning 1 digit numbers
                     switch (x) {
                         case (1):
-                            cout << " " << d;
+                            cout << " " << "\x1B[38;2;242;214;255m" << d<< "\x1B[0m";
                             break; 
                         case (2):
                             cout << setw(5) << d;
@@ -152,13 +141,13 @@ void displayCalendar(int year) {
                             cout << setw(5) << d;
                             break;
                         case (0): 
-                            cout << setw(5) << d << endl;
+                            cout << "\x1B[38;2;242;214;255m" << setw(5) << d << "\x1B[0m" << endl;
                             break;
                     } 
                 } else {
                     switch (x) {
                         case (1):
-                            cout << d;
+                            cout << "\x1B[38;2;242;214;255m" << d << "\x1B[0m";
                             break; 
                         case (2):
                             cout << setw(5) << d;
@@ -176,7 +165,7 @@ void displayCalendar(int year) {
                             cout << setw(5) << d;
                             break;
                         case (0): 
-                            cout << setw(5) << d << endl;
+                            cout << "\x1B[38;2;242;214;255m" << setw(5) << d << "\x1B[0m" << endl;
                             break;
                         }
                     }
@@ -188,7 +177,7 @@ int main() {
     int year;
     cout << "Input the year you want to get the calendar for: "; //letting user choose the year
     cin >> year;
-    cout << "\n";
+    cout << "\x1B[2J";
 
     displayCalendar(year);
 
