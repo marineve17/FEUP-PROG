@@ -1,8 +1,9 @@
 #include <iostream>
+#include<vector>
 
 using namespace std;
 
-void localMax(const int matrix[][5], bool option) {
+void localMax(const vector<vector<int>> matrix, bool option) {
     if (option == true) {
         for (int line = 0; line < 5; line++) {
             for (int column = 0; column < 5; column++) {
@@ -95,7 +96,7 @@ void localMax(const int matrix[][5], bool option) {
                     } else {
                         cout << matrix[line][column] << "\n";                        
                     }            
-                } else if ((line > 0) && (line < 4) && (column > 0) && (column < 4)) {
+                } else if ((line > 0) && (line < 5) && (column > 0) && (column < 5)) {
                         int elem1 = matrix[line-1][column-1];  //stating elements around
                         int elem2 = matrix[line-1][column];
                         int elem3 = matrix[line-1][column+1];
@@ -127,7 +128,7 @@ void localMax(const int matrix[][5], bool option) {
             for (int line = 0; line < 5; line++) {
                 for (int column = 0; column < 5; column++) {
 
-                     if ((line > 0) && (line < 5) && (column > 0) && (column < 5)) {
+                     if ((line > 0) && (line < 4) && (column > 0) && (column < 4)) {
                         int elem1 = matrix[line-1][column-1];  //stating elements around
                         int elem2 = matrix[line-1][column];
                         int elem3 = matrix[line-1][column+1];
@@ -165,7 +166,7 @@ int main() {
     cout << "Do you want to consider all local maxima? (y/n) ";
     cin >> option;
 
-    const int matrix[5][5] = {
+    const vector<vector<int>> matrix = {
         {7, 3, 4, 1, 3} ,
         {2, 9, 6, 2, 1} ,
         {1, 3, 5, 1, 4} ,
