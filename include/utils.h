@@ -34,8 +34,8 @@ namespace utils {
 
                     std::cout << csi << "0;2m";
                     std::cout << result << std::endl;
-
-                    std::cout << csi << 'K' << std::flush; // Clear the line in case there is something there
+                    std::cout << csi << "0m" << csi << 'K' << std::flush; // Clear the line in case there is something there
+                    
                     return true;
                 } else {
                     if (!std::cin.eof()) {
@@ -64,6 +64,5 @@ namespace utils {
                 }
             }
         }
-
     } // namespace input
 } // namespace utils
